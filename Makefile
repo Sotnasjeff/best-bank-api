@@ -1,3 +1,9 @@
+network:
+	docker network create -d bridge bank-network
+
+container:
+	docker run --name best_bank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@postgres14.5:5432/best_bank?sslmode=disable" best_bank:latest
+
 postgres:
 	docker run --name postgres14.5 --network bank-network -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:14.5-alpine
 
@@ -34,4 +40,4 @@ mock:
 createmigration:
 	migrate create -ext sql -dir db/migration -seq add_users
 
-.PHONY: createdb dropdb postgres migrateup migratedown migrateup1 migratedown1 sqlc test server mock createmigration
+.PHONY: createdb dropdb postgres migrateup migratedown migrateup1 migratedown1 sqlc test server mock createmigration network container
