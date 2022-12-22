@@ -4,12 +4,11 @@ const (
 	USD = "USD"
 	EUR = "EUR"
 	BRL = "BRL"
-	GBP = "GBP"
 )
 
 func IsSupportedCurrency(currency string) bool {
 	switch currency {
-	case USD, EUR, BRL, GBP:
+	case USD, EUR, BRL:
 		return true
 	}
 	return false
