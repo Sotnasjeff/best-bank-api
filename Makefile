@@ -13,6 +13,9 @@ createdb:
 dropdb:
 	docker exec -it postgres14.5 dropdb best_bank
 
+migrateawsup:
+		migrate --path db/migration --database "postgresql://root:F8hJAOmYIcpiPp0zUdz0@best-bank.ctmiyuptewzy.us-east-1.rds.amazonaws.com:5432/best_bank" --verbose up
+
 migrateup:
 	migrate --path db/migration --database "postgresql://root:secret@localhost:5432/best_bank?sslmode=disable" --verbose up
 
@@ -40,4 +43,4 @@ mock:
 createmigration:
 	migrate create -ext sql -dir db/migration -seq add_users
 
-.PHONY: createdb dropdb postgres migrateup migratedown migrateup1 migratedown1 sqlc test server mock createmigration network container
+.PHONY: createdb dropdb postgres migrateup migratedown migrateup1 migratedown1 sqlc test server mock createmigration network container migrateawsup
