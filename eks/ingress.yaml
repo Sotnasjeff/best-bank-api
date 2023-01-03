@@ -1,0 +1,17 @@
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  name: best-bank-ingress
+#spec:
+#  rules:
+#  - host: "api.best-bank.org"
+#    http:
+#      paths:
+#      - pathType: Prefix
+#        path: "/"
+#        backend:
+#          service:
+#            name: best-bank-api-service
+#            port:
+#              number: 80
+  
