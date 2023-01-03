@@ -10,7 +10,7 @@
 #metadata:
 #  name: best-bank-ingress
 #  annotations: 
-#   kubernetes.io/ingress.class: nginx 
+#   cert-manager.io/cluster-issuer: letsencrypt 
 #spec:
 #  ingressClassName: nginx 
 #  rules:
@@ -24,4 +24,7 @@
 #            name: best-bank-api-service
 #            port:
 #              number: 80
-  
+#  tls:   
+#  - host:
+#    - api.best-bank.org
+#    secretName: best-bank-api-cert
