@@ -1,0 +1,22 @@
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: best-bank-api-deployment
+#  labels:
+#    app: best-bank-api
+#spec:
+#  replicas: 2
+#  selector:
+#    matchLabels:
+#      app: best-bank-api
+#  template:
+#    metadata:
+#      labels:
+#        app: best-bank-api
+#  spec:
+#    containers:
+#    - name: best-bank-api
+#      image: 632473443856.dkr.ecr.us-east-1.amazonaws.com/bestbank:latest
+#      imagePullPolicy: Always 
+#      ports:
+#        - containerPort: 8080
