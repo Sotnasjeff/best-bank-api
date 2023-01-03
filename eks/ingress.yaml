@@ -1,8 +1,18 @@
 #apiVersion: networking.k8s.io/v1
+#kind: IngressClass
+#metadata:
+#  name: nginx
+#spec:
+#  controller: k8s.io/ingress-nginx
+#---
+#apiVersion: networking.k8s.io/v1
 #kind: Ingress
 #metadata:
 #  name: best-bank-ingress
+#  annotations: 
+#   kubernetes.io/ingress.class: nginx 
 #spec:
+#  ingressClassName: nginx 
 #  rules:
 #  - host: "api.best-bank.org"
 #    http:
