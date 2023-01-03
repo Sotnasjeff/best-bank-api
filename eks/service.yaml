@@ -1,0 +1,12 @@
+#apiVersion: apps/v1
+#kind: Service
+#metadata:
+#  name: best-bank-api-service
+#spec:
+#  selector:
+#    app: best-bank-api
+#  ports:
+#    - protocol: TCP
+#      port: 80
+#      targetPort: 8080
+#  type: LoadBalancer
