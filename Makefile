@@ -50,4 +50,8 @@ mock:
 createmigration:
 	migrate create -ext sql -dir db/migration -seq add_users
 
-.PHONY: createdb dropdb postgres migrateup migratedown migrateup1 migratedown1 sqlc test server mock createmigration network container migrateawsup db_docs db_schema
+proto: 
+	rm -f pb/*.go
+	protoc --proto_path=proto --go_out=pb --go_opt=paths=source_relative --go-grpc_out=pb --go-grpc_opt=paths=source_relative proto/*.proto
+
+.PHONY: createdb dropdb postgres migrateup migratedown migrateup1 migratedown1 sqlc test server mock createmigration network container migrateawsup db_docs db_schema proto
