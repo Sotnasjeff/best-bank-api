@@ -8,7 +8,7 @@ const (
 
 func IsSupportedCurrency(currency string) bool {
 	switch currency {
-	case USD, EUR, BRL:
+	case USD, EUR:
 		return true
 	}
 	return false
