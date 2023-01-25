@@ -62,7 +62,7 @@ func (processor *RedisTaskProcessor) ProcessTaskSendVerifyEmail(ctx context.Cont
 		Str("type", task.Type()).
 		Bytes("payload", task.Payload()).
 		Str("email", user.Email).
-		Msg("enqueued tas")
+		Msg("enqueued task")
 
 	return nil
 }
